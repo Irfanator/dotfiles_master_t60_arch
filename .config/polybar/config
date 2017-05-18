@@ -1,0 +1,448 @@
+;=====================================================
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/jaagr/polybar
+;
+;   The README contains alot of information
+;
+;=====================================================
+
+[colors]
+background = ${xrdb:color0}
+foreground = ${xrdb:color7}
+fgf = ${xrdb:color1}
+;background = #222
+;foreground = #dfdfdf
+background-alt = ${xrdb:color4}
+foreground-alt = ${xrdb:color7}
+primary = ${xrdb:color8}
+secondary = ${xrdb:color9}
+
+[fonts]
+f1 = jmk Dweep:size=9:antialias=false;0
+f2 = FontAwesome:size=12:antialias=true;0
+f3 = miniwi:size=9:antialias=false;0
+f4 = Kochi Gothic:size=9:antialias=false;0
+
+
+[bar/neko]
+monitor = ${env:MONITOR:LVDS1}
+width = 100%
+height = 24
+;offset-x = 1%
+;offset-y = 1%center bar
+;radius = 6.0
+fixed-center = true
+
+
+override-redirect = true
+wm-restack = i3
+;offset-x = 0%
+Yoffset-y = 1%
+radius = 0.0
+
+enable-ipc = false
+;width =  
+;height = 
+
+background = ${colors.fgf}
+foreground = ${colors.foreground}
+
+;line-size = 3
+;line-color = #f00
+
+;border-size = 4
+;border-color = #00000000
+
+padding-left = 20%
+padding-right = 20%
+
+;module-margin-left = 1
+;module-margin-right = 2
+
+font-0 = ${fonts.f1}
+font-1 = ${fonts.f2}
+font-2 = ${fonts.f3}
+font-3 = ${fonts.f4}
+
+;gsfonts installed
+;font-2 = Honoka Antique-Kaku:size=9:antialias=true;0
+;font-0 = jmk Dweep:size=9:antialias=false;0
+;font-1 = TakaoMincho:fontformat=truetype:size=9:antialias=false;0
+;	font-2 = Sans:fontformat=truetype:size=9:antialias=false;0
+
+modules-left = mpd
+modules-center = 
+modules-right =  cpu memory battery temperature volume
+
+tray = right
+tray-position = right
+tray-padding = 2
+tray-background = ${colors.background-alt}
+tray-detached = true
+
+
+;wm-restack = bspwm
+;wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+
+[bar/be]
+monitor = ${env:MONITOR:LVDS1}
+width = 100%
+height = 24
+fixed-center = true
+bottom = true
+
+override-redirect = true
+wm-restack = i3
+Yoffset-y = 1%
+radius = 0.0
+center bar
+enable-ipc = false
+
+background = ${colors.fgf}
+foreground = ${colors.foreground}
+
+padding = 30%
+
+font-0 = ${fonts.f1}
+font-1 = ${fonts.f2}
+font-2 = ${fonts.f3}
+font-3 = ${fonts.f4}
+
+modules-left = date
+modules-center = i3
+modules-right = wlan powermenu
+
+
+
+
+
+
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+
+
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+; Only show workspaces on the same output as the bar
+pin-workspaces = true
+strip-wsnumbers = true
+fuzzy-match = true
+
+label-mode-padding = 2
+label-mode-foreground = ${colors.foreground}
+label-mode-background = ${colors.background}
+; focused = Active workspace on focused monitor, default %index%
+label-focused = %icon%
+label-focused-background = ${colors.background-alt}
+label-focused-foreground = ${colors.foreground-alt}
+label-focused-padding = 2
+
+; unfocused = Inactive workspace on any monitor, default %index%
+label-unfocused = %icon%
+label-unfocused-padding = 2
+
+; visible = Active workspace on unfocused monitor, default %index%
+label-visible = %icon%
+label-visible-background = ${colors.background}
+label-visible-underline = ${colors.foreground}
+label-visible-padding = 2
+
+; urgent = Workspace with urgency hint set, default %index%
+label-urgent = %icon%
+label-urgent-background = ${colors.background}
+label-urgent-padding = 2
+
+; custom workspace icons
+ws-icon-0 = 1;一
+ws-icon-1 = 2;ニ
+ws-icon-2 = 3;三
+ws-icon-3 = 4;四
+ws-icon-4 = 5;五
+ws-icon-5 = 6;六
+ws-icon-6 = 7;七
+ws-icon-7 = 8;八
+ws-icon-8 = 9;九
+ws-icon-9 = 10;十
+ws-icon-default = イ
+
+
+
+
+
+[module/mpd]
+type = internal/mpd
+format-online =    <bar-progress> <label-song>
+;format-online = | <icon-prev> <icon-stop> <toggle> <icon-next> <bar-progress> <label-song> | <icon-repeat> <icon-repeatone> <icon-random> |
+
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
+icon-repeat = Rep
+icon-repeatone = 1
+icon-random = Rand
+
+toggle-on-foreground = ${colors.foreground}
+toggle-off-foreground = ${colors.foreground-alt}
+
+label-song-maxlen = 50
+label-song-ellipsis = true
+
+bar-progress-width = 16
+bar-progress-indicator = 
+bar-progress-fill = ─
+bar-progress-empty = ─
+
+label-offline = mpd is offline
+
+label-song-background = ${colors.background-alt}
+label-song-foreground = ${colors.foreground}
+label-song-padding = 2
+
+
+[module/filesystem]
+type = internal/fs
+
+format-mounted = <label-mounted>
+
+label-mounted = %mountpoint%: %percentage_free%% of %total%
+
+; Mountpoints to display
+mount-0 = /dev/sda2
+
+; Seconds to sleep between updates
+; Default: 30
+interval = 10
+
+; Display fixed precision values
+; Default: false
+fixed-values = true
+
+; Spacing between entries
+; Default: 2
+spacing = 4
+
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format =  <label>
+format-prefix-foreground = ${colors.foreground}
+label = %percentage%%
+
+[module/wlan]
+type = internal/network
+interface = wls3
+interval = 3.0
+
+format-connected = <ramp-signal> <label-connected>
+;format-connected = <ramp-signal> <label-connected>
+
+; Available tokens:
+;   %ifname%    [wireless+wired]
+;   %local_ip%  [wireless+wired]
+;   %essid%     [wireless]
+;   %signal%    [wireless]
+;   %upspeed%   [wireless+wired]
+;   %downspeed% [wireless+wired]
+;   %linkspeed% [wired]
+; Default: %ifname% %local_ip%
+label-connected = %local_ip% %downspeed% 
+label-disconnected = DC
+
+
+format-disconnected = <label-disconnected>
+;format-disconnected = <label-disconnected>
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+; ▉▊▋▌▍▎
+; ▁ ▂ ▃ ▄ ▅ ▆ ▇ █ 
+ramp-signal-0 = ▉▉
+ramp-signal-1 = ▊▉
+ramp-signal-2 = ▋▉
+ramp-signal-3 = ▌▉
+ramp-signal-4 = ▍▉
+ramp-signal-5 = ▎▉
+
+
+
+[module/eth]
+type = internal/network
+interface = ens2
+interval = 3.0
+
+label-connected = %local_ip%
+
+format-disconnected = <label-disconnected>
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+
+[module/date]
+type = internal/date
+interval = 5
+
+date =
+date-alt = "%A, %d %B %Y"
+
+time = %I:%M
+time-alt = %I:%M:%S %p
+
+format-prefix =
+format-prefix-foreground = ${colors.foreground}
+format-underline = ${colors.background-alt}
+
+label = %date% %time%
+
+[module/volume]
+type = internal/volume
+master-soundcard = default
+speaker-soundcard = default
+headphone-soundcard = default
+master-mixer = Master
+mapping = true
+format-volume = <ramp-volume> <label-volume>
+label-muted = volume_muted
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-headphones-0 = 
+ramp-headphones-1 = 
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 98
+
+format-charging = <animation-charging> <label-charging>
+
+format-discharging = <ramp-capacity> <label-discharging>
+
+format-full-prefix =
+format-full-prefix-foreground = ${colors.foreground-alt}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-foreground = ${colors.foreground}
+
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-framerate = 500
+;margin_left = 10
+;marginright = 10
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 75
+
+format = <ramp> <label>
+format-underline = ${colors.background-alt}
+format-warn = <ramp> <label-warn>
+
+label = %temperature%
+label-warn =  HEAT %temperature%
+
+ramp-0 = 
+
+
+
+[module/memory]
+type = internal/memory
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 3
+; Available tags:
+;   <label> (default)
+;   <bar-used>
+;   <bar-free>
+format =  <label>
+
+; Available tokens:
+;   %percentage_used% (default)
+;   %percentage_free%
+;   %gb_used%
+;   %gb_free%
+;   %gb_total%
+;   %mb_used%
+;   %mb_free%
+;   %mb_total%
+label = %percentage_used%%
+
+; Only applies if <bar-used> is used
+bar-used-indicator =
+bar-used-width = 50
+bar-used-empty = 
+
+
+[module/powermenu]
+type = custom/menu
+
+format-spacing = 1
+
+label-open = >>
+label-open-foreground = ${colors.background-alt}
+label-close = X cancel
+label-close-foreground = ${colors.background-alt}
+label-separator = |
+label-separator-foreground = ${colors.background-alt}
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
+
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = reboot
+
+menu-2-0 = power off
+menu-2-0-exec = poweroff
+menu-2-1 = cancel
+menu-2-1-exec = menu-open-0
+
+[settings]
+screenchange-reload = true
+format-padding = 2
+format-spacing = 2
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini

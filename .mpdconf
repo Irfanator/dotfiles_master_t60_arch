@@ -1,0 +1,28 @@
+music_directory     "~/Music"
+playlist_directory  "~/.mpd/playlists"
+db_file         "~/.mpd/tag_cache"
+log_file        "~/.mpd/mpd.log"
+pid_file        "~/.mpd/pid"
+state_file      "~/.mpd/state"
+sticker_file        "~/.mpd/sticker.sql"
+mixer_type	"software"
+
+audio_output {
+    type            "alsa"
+    name            "ALSA"
+    device          "hw:0,0"        # optional
+    format          "44100:16:2"    # optional
+#    mixer_device    "hw:0,0"       # optional
+#    mixer_device    "default"       # optional
+#    mixer_control   "PCM"           # optional
+#    mixer_index     "0"             # optional
+}
+
+audio_output {
+        type            "fifo"
+        name            "FIFO"
+        path            "/tmp/mpd.fifo"
+        format          "44100:16:2"    # optional
+}
+
+

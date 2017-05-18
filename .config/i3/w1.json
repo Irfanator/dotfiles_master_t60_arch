@@ -1,0 +1,155 @@
+// vim:ts=4:sw=4:et
+{
+    // splitv split container with 4 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.5,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 5,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 266,
+               "width": 402,
+               "x": 0,
+               "y": 0
+            },
+            "name": "neko@neko:~",
+            "percent": 0.25,
+            "swallows": [
+               {
+                "class": "^Termite$",
+                "instance": "^termite$",
+                "title": "^",
+                "transient_for": "^"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            // splith split container with 2 children
+            "border": "normal",
+            "floating": "auto_off",
+            "layout": "splith",
+            "percent": 0.25,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "pixel",
+                    "current_border_width": 5,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 266,
+                       "width": 402,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "neko@neko:~",
+                    "percent": 0.6,
+                    "swallows": [
+                       {
+                        "class": "^Termite$",
+                        "instance": "^termite$",
+                        "title": "^",
+                        "transient_for": "^"
+                       }
+                    ],
+                    "type": "con"
+                },
+                {
+                    "border": "pixel",
+                    "current_border_width": 5,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 266,
+                       "width": 402,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "feh",
+                    "percent": 0.4,
+                    "swallows": [
+                       {
+                        "class": "^feh$",
+                        "instance": "^feh$",
+                        "title": "^",
+                        "transient_for": "^"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 5,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 266,
+               "width": 402,
+               "x": 0,
+               "y": 0
+            },
+            "name": "neko@neko:~",
+            "percent": 0.25,
+            "swallows": [
+               {
+                "class": "^Termite$",
+                "instance": "^termite$",
+                "title": "^",
+                "transient_for": "^"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 5,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 266,
+               "width": 402,
+               "x": 0,
+               "y": 0
+            },
+            "name": "neko@neko:~",
+            "percent": 0.25,
+            "swallows": [
+               {
+                "class": "^Termite$",
+                "instance": "^termite$",
+                "title": "^",
+                "transient_for": "^"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
+{
+    "border": "pixel",
+    "current_border_width": 5,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 266,
+       "width": 402,
+       "x": 0,
+       "y": 0
+    },
+    "name": "neko@neko:~",
+    "percent": 0.5,
+    "swallows": [
+       {
+        "class": "^Termite$",
+        "instance": "^termite$",
+        "title": "^",
+        "transient_for": "^"
+       }
+    ],
+    "type": "con"
+}
+
