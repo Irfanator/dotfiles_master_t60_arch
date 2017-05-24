@@ -20,7 +20,7 @@ set linebreak
 
 
 
-set nowrap
+set wrap
 set tabstop=4 shiftwidth=4
 set expandtab
 set backspace=indent,eol,start
