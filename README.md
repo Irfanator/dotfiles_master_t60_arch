@@ -6,7 +6,7 @@
 
 Personal dot files...
 
-Programms i use:
+Programs i use:
 +  i3 - as Window Manager
 +  compton - as compositor to avoid tearing & for terminal transparency
 +  termite - as terminal
