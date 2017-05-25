@@ -57,8 +57,10 @@ foreground = ${colors.foreground}
 padding-left = 20%
 padding-right = 20%
 
-;module-margin-left = 1
-;module-margin-right = 2
+module-margin-left = 2
+module-margin-right = 2
+
+spacing = 0
 
 font-0 = ${fonts.f1}
 font-1 = ${fonts.f2}
@@ -110,6 +112,8 @@ background = ${colors.fgf}
 foreground = ${colors.foreground}
 
 padding = 30%
+
+spacing = 0
 
 font-0 = ${fonts.f1}
 font-1 = ${fonts.f2}
@@ -370,7 +374,7 @@ format-underline = ${colors.background-alt}
 format-warn = <ramp> <label-warn>
 
 label = %temperature%
-label-warn =  HEAT %temperature%
+label-warn = HEAT %temperature%
 
 ramp-0 = 
 
@@ -435,7 +439,7 @@ menu-2-1-exec = menu-open-0
 [settings]
 screenchange-reload = true
 format-padding = 2
-format-spacing = 2
+format-spacing = 0
 ;compositing-background = xor
 ;compositing-background = screen
 ;compositing-foreground = source

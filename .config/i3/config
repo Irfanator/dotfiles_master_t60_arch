@@ -54,7 +54,6 @@ bindsym $alt+F4 kill
 bindsym XF86Launch1 kill
 bindsym $alt+Tab exec --no-startup-id rofi -show window -kb-accept-entry '!Return'
 bindsym $alt+Shift+tab workspace prev
-bindsym $mod+c exec --no-startup-id  feh --bg-tile ~/Pictures/Wallpapers/wal/grayscale.png
 bindsym $mod+t exec --no-startup-id termite
 bindsym $mod+i exec --no-startup-id opera
 bindsym $mod+e exec --no-startup-id thunar

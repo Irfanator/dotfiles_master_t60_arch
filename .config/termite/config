@@ -1,2 +1,7 @@
 [options]
-font = jmk dweep SemiCondensed 9
+font = jmk Dweep 9
+mouse_autohide = true
+clickable_url = true
+scrollback_lines = 1000
+cursor_blink = underline
+browser = Opera
